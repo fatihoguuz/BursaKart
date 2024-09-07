@@ -10,10 +10,26 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+     /*
+      UIFont.familyNames.forEach({ name in
+          for font_name in UIFont.fontNames(forFamilyName: name){
+              print("\n\(font_name) ")
+          }
+      })
+      
+      */
+        let window = UIWindow(frame: UIScreen.main.bounds)
+               let homeVC = HomeVC()
+               let navigationController = UINavigationController(rootViewController: homeVC)
+               window.rootViewController = navigationController
+               window.makeKeyAndVisible()
+               self.window = window
+               
+               
+        
         return true
     }
 
